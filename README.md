@@ -2,7 +2,7 @@
 
 Личный сайт-портфолио QA-инженера **Михаила Гужова**
 
-**Демо:** https://mikhailguzhov.github.io/qa-portfolio/
+**Демо:** https://mikhailguzhov.github.io/QA_portfolio/
 
 ---
 
