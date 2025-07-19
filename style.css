@@ -590,7 +590,7 @@ main {
 
 .skills-row {
   position: relative;
-  overflow: visible; /* точно видим псевдоэлементы */
+  overflow: auto; /* точно видим псевдоэлементы */
   z-index: 30;
 }
 
