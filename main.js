@@ -1,103 +1,96 @@
-// Плавная прокрутка по якорям (кроме Pet Projects)
-document.querySelectorAll('nav a').forEach(link => {
-    if (link.id !== 'petBtn') {
-        link.addEventListener('click', e => {
-            const id = link.getAttribute('href');
-            const target = document.querySelector(id);
-            if (target) {
-                e.preventDefault();
-                window.scrollTo({ top: target.offsetTop - 64, behavior: 'smooth' });
-            }
-        });
+/* ===== Smooth scroll (кроме ссылок без href-якоря) ===== */
+document.querySelectorAll('nav a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    const target = document.querySelector(id);
+    if (target) {
+      e.preventDefault();
+      window.scrollTo({
+        top: target.offsetTop - 64,
+        behavior: 'smooth'
+      });
     }
+  });
 });
-// Pet Project Modal logic
-const petModal = document.getElementById('petModal');
-const openPetBtn = document.getElementById('petBtn');
-const openPetBtn2 = document.getElementById('openPetBtn');
-const closePetModal = document.getElementById('closePetModal');
-const backToMain = document.getElementById('backToMain');
 
-function openModal() {
-    petModal.classList.add('open');
-    document.body.style.overflow = 'hidden';
+/* ===== Универсальная система модалок ===== */
+
+const body = document.body;
+
+/**
+ * Привязка модалки
+ * @param {string[]} openerIds - ID кнопок/ссылок открытия
+ * @param {string} modalId - ID модалки (контейнер .modal-bg)
+ */
+function bindModal(openerIds, modalId) {
+  const modal = document.getElementById(modalId);
+  if (!modal) return;
+
+  // Открытие
+  openerIds.forEach(id => {
+    const btn = document.getElementById(id);
+    if (!btn) return;
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      openModal(modal);
+    });
+  });
+
+  // Кнопка X
+  const closeBtn = modal.querySelector('.close-modal');
+  if (closeBtn) closeBtn.addEventListener('click', () => closeModal(modal));
+
+  // Кнопки "Назад" / "Закрыть"
+  modal.querySelectorAll('.back-btn').forEach(b =>
+    b.addEventListener('click', () => closeModal(modal))
+  );
+
+  // Клик по фону
+  modal.addEventListener('click', e => {
+    if (e.target === modal) closeModal(modal);
+  });
 }
 
-function closeModal() {
-    petModal.classList.remove('open');
-    document.body.style.overflow = '';
+function openModal(modal) {
+  modal.classList.add('open');
+  body.style.overflow = 'hidden';
 }
-openPetBtn.addEventListener('click', e => {
-    e.preventDefault();
-    openModal();
+
+function closeModal(modal) {
+  modal.classList.remove('open');
+  // Проверяем нет ли других открытых
+  const anyOpen = document.querySelector('.modal-bg.open');
+  if (!anyOpen) body.style.overflow = '';
+}
+
+// ESC глобально
+window.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-bg.open').forEach(m => closeModal(m));
+  }
 });
-openPetBtn2.addEventListener('click', openModal);
-closePetModal.addEventListener('click', closeModal);
-backToMain.addEventListener('click', closeModal);
-// Close modal on ESC or bg click
-petModal.addEventListener('click', e => { if (e.target === petModal) closeModal(); });
-window.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
+/* ===== Привязки конкретных модалок ===== */
+bindModal(['petBtn','openPetBtn'], 'petModal');
+bindModal(['openAutoBtn'], 'autoModal');
+bindModal(['openCicdBtn'], 'cicdModal');
+bindModal(['openAboutBtn'], 'aboutModal');
+bindModal(['openResumeBtn'], 'resumeModal'); // если кнопка есть
 
-
-// ===== AUTOTESTS MODAL =====
-const autoModal = document.getElementById('autoModal');
-const openAutoBtn = document.getElementById('openAutoBtn');
-const closeAuto = document.getElementById('closeAutoModal');
-const backAuto = document.getElementById('backFromAuto');
-
-openAutoBtn.addEventListener('click', () => autoModal.classList.add('open'));
-closeAuto.addEventListener('click', () => autoModal.classList.remove('open'));
-backAuto.addEventListener('click', () => autoModal.classList.remove('open'));
-autoModal.addEventListener('click', e => { if (e.target === autoModal) autoModal.classList.remove('open'); });
-
-// ESC
-window.addEventListener('keydown', e => { if (e.key === 'Escape') autoModal.classList.remove('open'); });
-
-
-// ===== CI/CD MODAL =====
-const cicdModal = document.getElementById('cicdModal');
-const openCicdBtn = document.getElementById('openCicdBtn');
-const closeCicd = document.getElementById('closeCicdModal');
-const backCicd = document.getElementById('backFromCicd');
-
-openCicdBtn.addEventListener('click', () => cicdModal.classList.add('open'));
-closeCicd.addEventListener('click', () => cicdModal.classList.remove('open'));
-backCicd.addEventListener('click', () => cicdModal.classList.remove('open'));
-cicdModal.addEventListener('click', e => { if (e.target === cicdModal) cicdModal.classList.remove('open'); });
-
-window.addEventListener('keydown', e => { if (e.key === 'Escape') cicdModal.classList.remove('open'); });
-
-// ===== ABOUT MODAL =====
-const aboutModal = document.getElementById('aboutModal');
-const openAboutBtn = document.getElementById('openAboutBtn');
-const closeAbout = document.getElementById('closeAboutModal');
-const backAbout = document.getElementById('backFromAbout');
-
-openAboutBtn.addEventListener('click', () => aboutModal.classList.add('open'));
-closeAbout.addEventListener('click', () => aboutModal.classList.remove('open'));
-backAbout.addEventListener('click', () => aboutModal.classList.remove('open'));
-aboutModal.addEventListener('click', e => { if (e.target === aboutModal) aboutModal.classList.remove('open'); });
-window.addEventListener('keydown', e => { if (e.key === 'Escape') aboutModal.classList.remove('open'); });
-
-// Resume modal
-const resumeModal = document.getElementById('resumeModal');
-const openResumeBtn = document.getElementById('openResumeBtn');
-const closeResumeModal = document.getElementById('closeResumeModal');
-const backFromResume = document.getElementById('backFromResume');
-
-function openModal(m){ m.classList.add('open'); document.documentElement.style.overflow='hidden'; }
-function closeModal(m){ m.classList.remove('open'); document.documentElement.style.overflow=''; }
-
-if(openResumeBtn){
-  openResumeBtn.addEventListener('click', ()=>openModal(resumeModal));
+/* ===== Тултипы: адаптация краёв (опционально) ===== */
+function adjustTooltip(badge) {
+  badge.classList.remove('tip-left','tip-right','tip-top');
+  const rect = badge.getBoundingClientRect();
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const spaceBottom = vh - rect.bottom;
+  const spaceTop = rect.top;
+  if (spaceBottom < 70 && spaceTop > spaceBottom) badge.classList.add('tip-top');
+  if (rect.left < 40) badge.classList.add('tip-left');
+  else if (vw - rect.right < 40) badge.classList.add('tip-right');
 }
-if(closeResumeModal){
-  closeResumeModal.addEventListener('click', ()=>closeModal(resumeModal));
-}
-if(backFromResume){
-  backFromResume.addEventListener('click', ()=>closeModal(resumeModal));
-}
-resumeModal?.addEventListener('click', e=>{
-  if(e.target===resumeModal) closeModal(resumeModal);
+
+document.querySelectorAll('.badge').forEach(b => {
+  b.addEventListener('mouseenter', () => adjustTooltip(b));
+  b.addEventListener('focus', () => adjustTooltip(b));
 });
