@@ -271,8 +271,7 @@ main {
 }
 
 .badge {
-    z-index: 2000;
-    flex: 0 0 auto;
+      flex: 0 0 auto;
     background: var(--primary);
     color: #fff;
     font-size: .82rem;
@@ -293,7 +292,8 @@ main {
 }
 
 .badge::after {
-    z-index: 1000;
+
+    
     content: attr(data-tip);
     position: absolute;
     left: 50%;
@@ -309,7 +309,7 @@ main {
     box-shadow: var(--shadow-s);
     pointer-events: none;
     transition: opacity .2s var(--transition), transform .2s var(--transition);
-    z-index: 10;
+
 }
 
 .badge:hover::after {
