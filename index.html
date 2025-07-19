@@ -1,204 +1,204 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mikhail • QA Engineer Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mikhail • QA Engineer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <div class="header-inner">
-            <span class="logo">Mikhail | QA Engineer</span>
-            <nav>
-                <a href="#portfolio">Портфолио</a>
-                <a href="#contacts">Контакты</a>
-                <a id="petBtn" href="#">Pet Projects</a>
-            </nav>
-        </div>
-    </header>
+<header>
+  <div class="header-inner">
+    <span class="logo">Mikhail | QA Engineer</span>
+    <nav>
+      <a href="#portfolio">Портфолио</a>
+      <a href="#contacts">Контакты</a>
+      <a id="petBtn" href="#">Pet Projects</a>
+    </nav>
+  </div>
+</header>
 
-    <main>
-        <!-- Hero -->
-        <section class="hero">
-            <div class="hero-img">
-                <img src="./images/myphoto.jpg" alt="Mikhail photo" />
-                <div class="hero-info">
-                    <h1>Системный QA Engineer</h1>
-                    <h1>отвечаю за качество веб‑продуктов</h1>
-                    <p>Закрываю ручное тестирование (150 + кейсов, отчёты “дефект → риск”), параллельно автоматизирую на Python (Pytest + Playwright) и настраиваю CI-пайплайн для smoke-suite. Цель — выйти на уровень Senior за 2 года; ищу задачи, где важен результат, а не титул.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills -->
-        <div class="skills-row">
-            <span class="badge" data-tip="Ручное тестирование веб‑приложений">
-                Web Testing
-              </span>
-
-            <span class="badge" data-tip="Грамотное оформление баг‑репортов">
-                Bug Reporting
-              </span>
-
-            <span class="badge" data-tip="КЭ • ГЗ • Pairwise • Decision‑tables • FSM • Use‑case">
-                Test Design
-              </span>
-
-            <span class="badge" data-tip="Создание коллекций запросов, настройка окружений, проверка ответов, цепочки запросов">
-          Postman / API Testing
-        </span>
-
-            <span class="badge" data-tip="Базовый синтаксис, DOM‑скрипты">
-                JavaScript (basic)
-              </span>
-
-            <span class="badge" data-tip="SELECT, JOIN, фильтрация, агрегаты">
-                SQL Queries
-              </span>
-
-            <span class="badge" data-tip="Scrum, планинги, ретро, story points">
-                Agile / Scrum
-              </span>
-        </div>
-
-        <!-- Portfolio -->
-        <section class="section" id="portfolio">
-            <h2>Портфолио</h2>
-            <div class="cards">
-                <div class="card">
-                    <h3>Баг‑репорты</h3>
-                    <p>Полные отчёты в стиле Jira: шаги, ожидание и&nbsp;факт, вложения, реальный пример работы.</p>
-                    <a class="btn" href="https://drive.google.com/drive/folders/1UINzPiEBwxHPzI0mznCi1fFb_PUBx9qg?usp=sharing" target="_blank" rel="noopener">Смотреть</a>
-                </div>
-                <div class="card">
-                    <h3>Чек‑лист и сценарии</h3>
-                    <p>UI‑чек‑лист и тест‑сценарии для веб‑приложения (Google Sheet, PDF, Notion).</p>
-                    <a class="btn" href="https://docs.google.com/your-checklist" target="_blank" rel="noopener">Открыть</a>
-                </div>
-                <div class="card">
-                    <h3>Обо мне + Видео</h3>
-                    <p>60-секундное видео о моём опыте и цели → Senior за 2 года.</p>
-                    <button class="btn" id="openAboutBtn" type="button">Смотреть</button>
-                </div>
-                <div class="card">
-                    <h3>Pet Projects</h3>
-                    <p>Мои учебные и практические проекты: приложение для умножения, калькулятор зарплаты, автосортировка фото и др.</p>
-                    <button class="btn" id="openPetBtn" type="button">Смотреть проекты</button>
-                </div>
-
-                <div class="card">
-                    <h3>Автотесты (WIP)</h3>
-                    <p>Пишу smoke/regression на Python (Pytest + Playwright + Requests).
-В процессе: базовый набор UI + API, настройка фикстур, аллюр‑репорты.
-Публичный репозиторий и Allure-отчёт выложу в 2025 — раздел обновлю.</p>
-                    <button class="btn" id="openAutoBtn" type="button">Смотреть автотесты</button>
-                </div>
-
-                <!-- CI/CD & Метрики -->
-                <div class="card">
-                    <h3>CI/CD & Метрики</h3>
-                    <p>Pipeline GitHub Actions: lint → unit → smoke → Lighthouse (≤ 3 мин). Публикую Allure-history, CodeQL-проверки и отчёт по Web Vitals после каждого релиза.</p>
-                    <button class="btn" id="openCicdBtn" type="button">Смотреть пайплайн</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contacts -->
-        <section class="contacts" id="contacts">
-            <div class="contacts-inner">
-
-                <h2>Контакты</h2>
-                <p>Email:
-                    <a href="mailto:mindforge.one@gmail.com">mindforge.one@gmail.com</a>
-                </p>
-                <p>Telegram: <a href="https://t.me/yourhandle" target="_blank">@Mindforges</a></p>
-                <p>GitHub: <a href="https://github.com/MikhailGuzhov" target="_blank">https://github.com/MikhailGuzhov</a></p>
-            </div>
-        </section>
-    </main>
-
-    <!-- PET PROJECTS MODAL -->
-    <div class="modal-bg" id="petModal">
-        <div class="modal">
-            <button class="close-modal" id="closePetModal" title="Закрыть">&times;</button>
-            <div class="modal-title">Pet Projects</div>
-            <div class="modal-desc">Внерабочие проекты, которые сделал для себя, ребёнка, практики кода.</div>
-            <ul class="pet-list">
-                <li class="pet-item">
-                    <a href="https://github.com/yourgithub/multiplication-table-app" class="pet-link" target="_blank" rel="noopener">Тренажёр таблицы умножения</a>
-                    <span class="pet-desc">Мини‑web‑приложение для ребёнка: учим таблицу умножения, мотивируем медальками. Простая JS‑логика и сохранение прогресса.</span>
-                </li>
-                <li class="pet-item">
-                    <a href="https://github.com/yourgithub/salary-calc" class="pet-link" target="_blank" rel="noopener">Калькулятор зарплаты</a>
-                    <span class="pet-desc">Вводишь сумму, считаешь налоги, что получаешь на руки. Проект выполнялся для руководителя компании DnD Group.</span>
-                </li>
-                <li class="pet-item">
-                    <a href="https://mikhailguzhov.github.io/ImgHunterApp/" class="pet-link" target="_blank" rel="noopener">Выбор и сортировка фото</a>
-                    <span class="pet-desc">Полуавтоматизация отбора фото — сделано для собственной работы, первый опыт JS‑логики и UI.</span>
-                </li>
-            </ul>
-            <button class="back-btn" id="backToMain" type="button">Назад к портфолио</button>
-        </div>
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-img">
+      <img src="./images/myphoto.jpg" alt="Mikhail photo" />
+      <div class="hero-info">
+        <h1>Системный QA Engineer</h1>
+        <p class="hero-sub">Отвечаю за качество веб‑продуктов</p>
+        <p>Закрываю ручное тестирование (150+ оформленных дефектов и кейсов, отчёты “дефект → риск”), параллельно автоматизирую на <strong>Python (Pytest + Playwright)</strong> и готовлю CI пайплайн для smoke‑suite. Цель — выйти на уровень strong middle / Senior за 2 года; ищу задачи, где важен результат, а не титул.</p>
+      </div>
     </div>
-    <!-- AUTOTESTS MODAL -->
-    <div class="modal-bg" id="autoModal">
-        <div class="modal">
-            <button class="close-modal" id="closeAutoModal" title="Закрыть">&times;</button>
-            <div class="modal-title">Автотесты (WIP) 🚧</div>
-            <div class="modal-desc">
-               Smoke‑suite на Python + Playwright уже пишется.<br>
-Публичный репозиторий и Allure‑отчёт будут в 2025.<br>
-Следи за обновлениями — раздел скоро откроется.
-            </div>
-            <button class="back-btn" id="backFromAuto" type="button">Назад к портфолио</button>
+  </section>
+
+  <!-- Skills -->
+  <div class="skills-row">
+    <span class="badge" data-tip="Ручное тестирование веб‑приложений">Web Testing</span>
+    <span class="badge" data-tip="Грамотное оформление баг‑репортов">Bug Reporting</span>
+    <span class="badge" data-tip="КЭ • ГЗ • Pairwise • Decision Tables • FSM • Use Case">Test Design</span>
+    <span class="badge" data-tip="Создание коллекций, окружения, валидация ответов, цепочки">Postman / API</span>
+    <span class="badge" data-tip="Python + Pytest + Playwright: фикстуры, маркировки, smoke">Python Automation</span>
+    <span class="badge" data-tip="Базовый синтаксис, DOM‑скрипты">JavaScript (basic)</span>
+    <span class="badge" data-tip="SELECT, JOIN, агрегаты, фильтрация">SQL Queries</span>
+    <span class="badge" data-tip="Scrum: планинги, ретро, story points">Agile / Scrum</span>
+  </div>
+
+  <!-- Portfolio -->
+  <section class="section" id="portfolio">
+    <h2>Портфолио</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Баг‑репорты</h3>
+        <p>Полные отчёты: шаги, ожидание → факт, вложения, приоритет / риск.</p>
+        <a class="btn" href="https://drive.google.com/drive/folders/1UINzPiEBwxHPzI0mznCi1fFb_PUBx9qg?usp=sharing" target="_blank" rel="noopener">Смотреть</a>
+      </div>
+
+      <div class="card">
+        <h3>Чек‑лист и сценарии</h3>
+        <p>UI чек‑лист и тест‑сценарии по критическим потокам (Google Sheet / PDF / Notion).</p>
+        <a class="btn" href="https://docs.google.com/your-checklist" target="_blank" rel="noopener">Открыть</a>
+      </div>
+
+      <div class="card">
+        <h3>Обо мне + Видео</h3>
+        <p>60 секунд: кто я, чем отличаюсь, траектория роста.</p>
+        <button class="btn" id="openAboutBtn" type="button">Смотреть</button>
+      </div>
+
+      <div class="card">
+        <h3>Pet Projects</h3>
+        <p>Приложение для умножения, зарплатный калькулятор, инструмент сортировки фото.</p>
+        <button class="btn" id="openPetBtn" type="button">Смотреть проекты</button>
+      </div>
+
+      <div class="card">
+        <h3>Автотесты (WIP)</h3>
+        <p>Python + Playwright: формирую smoke (auth, формы, негативы), Pytest структура (фикстуры, маркировки), план Allure & CI.</p>
+        <button class="btn" id="openAutoBtn" type="button">Смотреть автотесты</button>
+      </div>
+
+      <div class="card">
+        <h3>CI/CD & Метрики</h3>
+        <p>План пайплайна: lint → unit → smoke → Lighthouse; публикация Allure history & Web Vitals.</p>
+        <button class="btn" id="openCicdBtn" type="button">Смотреть пайплайн</button>
+      </div>
+
+      <div class="card">
+        <h3>Резюме (PDF)</h3>
+        <p>Актуальная версия PDF (обновлено: 09.2024). Вся выжимка навыков и целей.</p>
+        <div class="resume-actions">
+          <a class="btn" href="files/Mikhail_Guzhov_QA_Resume.pdf" target="_blank" rel="noopener">PDF</a>
+          <a class="btn btn-outline" href="files/Mikhail_Guzhov_QA_Resume.pdf" download>Скачать</a>
+          <button class="btn" id="openResumeBtn" type="button">Просмотр</button>
         </div>
+      </div>
     </div>
+  </section>
 
-    <!-- CI/CD MODAL -->
-    <div class="modal-bg" id="cicdModal">
-        <div class="modal">
-            <button class="close-modal" id="closeCicdModal" title="Закрыть">&times;</button>
-            <div class="modal-title">CI/CD & Метрики 🚧</div>
-            <div class="modal-desc">
-                GitHub Actions-pipeline (lint→unit→smoke→Lighthouse) открою после первой автосборки.<br> Следи за обновлениями — скоро ссылка на live-Dashboard.
-            </div>
-            <button class="back-btn" id="backFromCicd" type="button">Назад к портфолио</button>
-        </div>
+  <!-- Contacts -->
+  <section class="contacts" id="contacts">
+    <div class="contacts-inner">
+      <h2>Контакты</h2>
+      <p>Email: <a href="mailto:mindforge.one@gmail.com">mindforge.one@gmail.com</a></p>
+      <p>Telegram: <a href="https://t.me/yourhandle" target="_blank">@Mindforges</a></p>
+      <p>GitHub: <a href="https://github.com/MikhailGuzhov" target="_blank">github.com/MikhailGuzhov</a></p>
+      <p>Резюме: <a href="files/Mikhail_Guzhov_QA_Resume.pdf" target="_blank" rel="noopener">PDF</a></p>
     </div>
-    <!-- ABOUT MODAL -->
-    <div class="modal-bg" id="aboutModal">
-        <div class="modal">
-            <button class="close-modal" id="closeAboutModal" title="Закрыть">&times;</button>
+  </section>
+</main>
 
-            <div class="modal-title">Обо мне</div>
+<!-- PET PROJECTS MODAL -->
+<div class="modal-bg" id="petModal">
+  <div class="modal">
+    <button class="close-modal" id="closePetModal" title="Закрыть">&times;</button>
+    <div class="modal-title">Pet Projects</div>
+    <div class="modal-desc">Проекты для себя, ребёнка и практики: маленькие утилиты → живые задачи.</div>
+    <ul class="pet-list">
+      <li class="pet-item">
+        <a href="https://github.com/yourgithub/multiplication-table-app" class="pet-link" target="_blank" rel="noopener">Тренажёр таблицы умножения</a>
+        <span class="pet-desc">Учебное web‑приложение: таблица умножения + мотивация. Первый опыт структурирования JS.</span>
+      </li>
+      <li class="pet-item">
+        <a href="https://github.com/yourgithub/salary-calc" class="pet-link" target="_blank" rel="noopener">Калькулятор зарплаты</a>
+        <span class="pet-desc">Расчёт “грязные → чистые” + налоги. Практика логики и валидации.</span>
+      </li>
+      <li class="pet-item">
+        <a href="https://mikhailguzhov.github.io/ImgHunterApp/" class="pet-link" target="_blank" rel="noopener">Выбор и сортировка фото</a>
+        <span class="pet-desc">Полуавтоматизация отбора фото (File API, UX тест). Первый опыт оптимизации рутины.</span>
+      </li>
+    </ul>
+    <button class="back-btn" id="backToMain" type="button">Назад к портфолио</button>
+  </div>
+</div>
 
-            <div class="modal-desc">
-                <p><strong>QA Engineer с упором на Python. Нашёл 150+ дефектов, закрыл ручное покрытие ключевых UI/API сценариев и начал переносить их в автотесты (Pytest + Playwright). Хочу за 2 года вырасти до strong middle/senior</p>
-                <p>Вне работы: Занимаюсь спортом, бегу полумарафоны, пишу мелкие полезные тулзы (тренажёр умножения для сына) — люблю, когда польза ощутима. 🙂</p>
-            </div>
-
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/your-intro" title="Видео-презентация — Mikhail QA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-        </iframe>
-            </div>
-
-            <button class="back-btn" id="backFromAbout" type="button">Назад к портфолио</button>
-        </div>
+<!-- AUTOTESTS MODAL -->
+<div class="modal-bg" id="autoModal">
+  <div class="modal">
+    <button class="close-modal" id="closeAutoModal" title="Закрыть">&times;</button>
+    <div class="modal-title">Автотесты (WIP) 🚧</div>
+    <div class="modal-desc">
+      Smoke‑suite на <strong>Python (Pytest + Playwright)</strong> в разработке.<br>
+      Покрываю: авторизация, критичные формы, негативы (UI). Дальше: API слой (Requests), Allure, параллельный прогон в CI (GitHub Actions).<br>
+      Публичный репозиторий и отчёт Allure выложу в 2025.
     </div>
+    <button class="back-btn" id="backFromAuto" type="button">Назад к портфолио</button>
+  </div>
+</div>
 
+<!-- CI/CD MODAL -->
+<div class="modal-bg" id="cicdModal">
+  <div class="modal">
+    <button class="close-modal" id="closeCicdModal" title="Закрыть">&times;</button>
+    <div class="modal-title">CI/CD & Метрики 🚧</div>
+    <div class="modal-desc">
+      Планирую GitHub Actions: lint → unit → smoke → Lighthouse.<br>
+      Цель: ≤3 мин до результата, публикация Allure history + Web Vitals / Lighthouse отчёта.
+    </div>
+    <button class="back-btn" id="backFromCicd" type="button">Назад к портфолио</button>
+  </div>
+</div>
 
+<!-- ABOUT MODAL -->
+<div class="modal-bg" id="aboutModal">
+  <div class="modal">
+    <button class="close-modal" id="closeAboutModal" title="Закрыть">&times;</button>
+    <div class="modal-title">Обо мне</div>
+    <div class="modal-desc">
+      <p><strong>QA Engineer с упором на Python.</strong> 150+ дефектов, закрыто ручное покрытие ключевых UI/API сценариев, переношу их в автотесты (Pytest + Playwright). Цель: сильный middle / Senior за 2 года.</p>
+      <p>Спорт (полумарафоны) → дисциплина; делаю утилиты под реальные бытовые задачи (тренажёр умножения). Люблю превращать рутину в инструменты.</p>
+    </div>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/your-intro"
+              title="Видео-презентация — Mikhail QA"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+    <button class="back-btn" id="backFromAbout" type="button">Назад к портфолио</button>
+  </div>
+</div>
 
-    <footer>
-        <div class="footer-inner">
-            <span>© 2024 — Mikhail QA Portfolio</span>
-        </div>
-    </footer>
+<!-- RESUME MODAL (optional) -->
+<div class="modal-bg" id="resumeModal">
+  <div class="modal">
+    <button class="close-modal" id="closeResumeModal" title="Закрыть">&times;</button>
+    <div class="modal-title">Резюме (Summary)</div>
+    <div class="modal-desc">
+      <p><strong>Summary:</strong> Manual + старт Automation. 150+ оформленных дефектов (UI / API). Smoke на Python (Pytest + Playwright) — в работе. Сильные стороны: системное мышление, оформление артефактов, превращение рутины в утилиты.</p>
+      <p><strong>Стек:</strong> Web / UI, API (Postman), Test Design (EP, BVA, Pairwise, Decision Tables), SQL (JOIN/агрегаты), Git, Pytest, Playwright, Requests, Agile/Scrum.</p>
+      <p><strong>Цель:</strong> Автоматизация критичных флоу → regression ядро → CI + Allure.</p>
+      <a class="btn" href="files/Mikhail_Guzhov_QA_Resume.pdf" target="_blank" rel="noopener">Открыть PDF</a>
+    </div>
+    <button class="back-btn" id="backFromResume" type="button">Закрыть</button>
+  </div>
+</div>
 
-    <script src="main.js"></script>
+<footer>
+  <div class="footer-inner">
+    <span>© 2024 — Mikhail QA Portfolio</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
 </body>
-
 </html>
