@@ -79,3 +79,25 @@ closeAbout.addEventListener('click', () => aboutModal.classList.remove('open'));
 backAbout.addEventListener('click', () => aboutModal.classList.remove('open'));
 aboutModal.addEventListener('click', e => { if (e.target === aboutModal) aboutModal.classList.remove('open'); });
 window.addEventListener('keydown', e => { if (e.key === 'Escape') aboutModal.classList.remove('open'); });
+
+// Resume modal
+const resumeModal = document.getElementById('resumeModal');
+const openResumeBtn = document.getElementById('openResumeBtn');
+const closeResumeModal = document.getElementById('closeResumeModal');
+const backFromResume = document.getElementById('backFromResume');
+
+function openModal(m){ m.classList.add('open'); document.documentElement.style.overflow='hidden'; }
+function closeModal(m){ m.classList.remove('open'); document.documentElement.style.overflow=''; }
+
+if(openResumeBtn){
+  openResumeBtn.addEventListener('click', ()=>openModal(resumeModal));
+}
+if(closeResumeModal){
+  closeResumeModal.addEventListener('click', ()=>closeModal(resumeModal));
+}
+if(backFromResume){
+  backFromResume.addEventListener('click', ()=>closeModal(resumeModal));
+}
+resumeModal?.addEventListener('click', e=>{
+  if(e.target===resumeModal) closeModal(resumeModal);
+});
