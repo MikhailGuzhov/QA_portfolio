@@ -31,10 +31,8 @@ JavaScript (ES6+): Реализация всей интерактивной ло
 
 📞 Контакты
 <p align="left">
-<a href="https://t.me/daytrader067" target="_blank">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Telegram-%40Mindforges-2CA5E0%3Fstyle%3Dfor-the-badge%26logo%3Dtelegram%26logoColor%3Dwhite" alt="Телеграм"/>
-</a>
+<a href="https://t.me/Mindforges" target="_blank">
+
 <a href="mailto:daytrader067@yandex.ru">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Email-daytrader067%40yandex.ru-D14836%3Fstyle%3Dfor-the-badge%26logo%3Dyandex%26logoColor%3Dwhite" alt="Email"/>
 </a>
 </p>
